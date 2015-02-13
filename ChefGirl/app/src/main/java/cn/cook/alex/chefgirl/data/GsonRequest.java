@@ -11,6 +11,8 @@ import com.google.gson.Gson;
 import java.io.UnsupportedEncodingException;
 import java.util.Map;
 
+import cn.cook.alex.chefgirl.utils.LogUtil;
+
 /**
  * Created by alex on 15/2/12.
  */

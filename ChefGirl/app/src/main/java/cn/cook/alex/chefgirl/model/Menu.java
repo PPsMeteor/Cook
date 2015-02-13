@@ -8,6 +8,8 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
+import cn.cook.alex.chefgirl.dao.MenusDataHelper;
+
 /**
  * Created by alex on 15/2/12.
  */
@@ -20,15 +22,21 @@ public class Menu extends BaseModel {
     public String imtro;    //功能简介
     public String ingredients;  //食材
     public String burden;   //配料
-
-    public String[] albums; //封面图片url
+    /**
+     * 封面图片url
+     */
+    public String[] albums;
 
     private List<Step> steps;
 
     private class Step{
-        public int count;
         public String step;
         public String img;
+    }
+
+    @Override
+    public String toString() {
+        return "id:"+id+"\ttitle:"+title+"\tstep:"+steps.get(0);
     }
 
     public static void addToCache(Menu menu) {
@@ -44,19 +52,53 @@ public class Menu extends BaseModel {
     }
 
     public static Menu fromCursor(Cursor c) {
-        return null;
+        String id = c.getString(c.getColumnIndex(MenusDataHelper.MenusDBInfo.ID));
+        Menu menu = getFromCache(id);
+        if (menu != null){
+            return menu;
+        }
+        menu = new Gson().fromJson(c.getString(c.getColumnIndex(MenusDataHelper.MenusDBInfo.JSON))
+        ,Menu.class);
+        addToCache(menu);
+        return menu;
     }
 
     public static class MenuRequestData {
-        public ArrayList<Menu> data;
-        public Paging paging;
+        public String resultcode;
+        public String reason;
+        public String errorcode;
+        public Result result;
 
-        public String getPage(){
-            return paging.next;
+        @Override
+        public String toString() {
+            return "result:"+result;
+        }
+
+        public String  getOffset(){
+            if (result == null){
+                return "0";
+            }
+            return result.rn;
+        }
+
+        public ArrayList<Menu> getMenus()
+        {
+            if (result == null){
+                return null;
+            }
+            return result.data;
         }
     }
 
-    private class Paging{
-        public String next;
+    private class Result{
+        public ArrayList<Menu> data;
+        public String totalNum;
+        public String pn;
+        public String rn;
+
+        @Override
+        public String toString() {
+            return "totalNum:"+totalNum+"\tdata:"+data.toString();
+        }
     }
 }
