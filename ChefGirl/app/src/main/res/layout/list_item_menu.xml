@@ -1,16 +1,68 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
-    android:paddingTop="8dp"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    android:background="@color/common_color_card_bg"
+    android:orientation="vertical"
+    android:paddingTop="8dp">
+
     <TextView
         android:id="@+id/tv_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ellipsize="end"
         android:gravity="center"
+        android:singleLine="true"
+        android:textColor="@color/common_color_text_title"
+        android:textSize="22sp"
+        tools:text="白切鸡" />
+
+    <View
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="1dp"
+        android:layout_marginBottom="3dp"
+        android:layout_marginTop="3dp"
+        android:background="@color/common_color_div"></View>
+
     <ImageView
+        android:layout_gravity="center"
         android:id="@+id/iv_cover"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
         android:layout_width="match_parent"
-        android:layout_height="240dp" />
+        android:layout_height="240dp"
+        android:scaleType="centerCrop" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginBottom="3dp"
+        android:layout_marginTop="3dp"
+        android:background="@color/common_color_div"></View>
+
+    <TextView
+        android:id="@+id/tv_introduction"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="18dp"
+        android:textColor="@color/common_color_text_tips"
+        android:textSize="16sp"
+        tools:text="简介：菜式这么做的" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginBottom="3dp"
+        android:layout_marginTop="3dp"
+        android:background="@color/common_color_div"></View>
+
+    <TextView
+        android:id="@+id/tv_material"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="18dp"
+        android:textColor="@color/common_color_text_tips"
+        android:textSize="16sp"
+        tools:text="食材：猪肉，猪大腿，猪心，猪肝" />
 </LinearLayout>

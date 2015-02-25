@@ -1,16 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
-    android:background="@android:color/background_dark"
+<android.support.v4.widget.SwipeRefreshLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/swipe_container"
+    android:background="@color/common_color_bg"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
-    <ListView
-        android:padding="18dp"
-        android:id="@+id/list_view"
-        android:dividerHeight="1dp"
-        android:scrollbarStyle="outsideOverlay"
-        android:divider="@android:color/holo_orange_dark"
+    <cn.cook.alex.chefgirl.ui.view.PageStaggeredGridView
+        xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
-        </ListView>
-</LinearLayout>
+        android:layout_height="match_parent"
+        android:id="@+id/grid_view"
+        app:item_margin="8dp"
+        app:column_count="@integer/column_count">
+        </cn.cook.alex.chefgirl.ui.view.PageStaggeredGridView>
+</android.support.v4.widget.SwipeRefreshLayout>

@@ -16,9 +16,9 @@ public class CookApi {
     //页数
     public static int PAGE = 0;
     //默认返回条目数目
-    public static int DEFAULT_MAX_ITME = 10;
+    public static String  DEFAULT_MAX_ITME = "10";
     //起始条目下标
-    public static int OFFSET = 0;
+    public static String  OFFSET = "0";
     //所有分类类型
     public static enum Category{
         DISHES("10001"),CUISINE("10002"),INGREDIENTS("10003"),EFFECT("10004"),SCENE("10005"),CRAFTS("10006"),STYLE("10007");
@@ -53,7 +53,7 @@ public class CookApi {
      * @param offset  返回起始下标
      * @return
      */
-    public static String query(String menu, int maxItem, int offset) {
+    public static String query(String menu, String maxItem, String offset) {
         if (TextUtils.isEmpty(menu)) {
             LogUtil.e(TAG, "menu is not available");
             return "";

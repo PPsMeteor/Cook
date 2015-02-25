@@ -1,8 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <!--默认大背景颜色 灰白 1.ffeeeeee-->
+    <color name="common_color_bg">#ffeeeeee</color>
+    <!--分割线颜色-->
+    <color name="common_color_div">#ffc8c8c8</color>
+    <!--日期的颜色-->
+    <color name="common_color_date">#ff43c56f</color>
+    <!--卡片的背景-->
+    <color name="common_color_card_bg">#ffffffff</color>
+    <!--提示性的文字颜色-->
+    <color name="common_color_text_tips">#ff9f9f9f</color>
+    <!--标题颜色-->
+    <color name="common_color_text_title">#ff413f3c</color>
+    <!--通用透过颜色-->
+    <color name="common_color_transparent">#00000000</color>
+
     <color name="holo_blue_light">#3333b5e5</color>
     <color name="holo_green_light">#3399cc00</color>
     <color name="holo_red_light">#33ff4444</color>
     <color name="holo_orange_light">#33ffbb33</color>
     <color name="holo_purple_light">#33aa66cc</color>
+
+    <!--loading footer-->
+    <color name="footer_titanic_text_color">#ff212121</color>
 </resources>

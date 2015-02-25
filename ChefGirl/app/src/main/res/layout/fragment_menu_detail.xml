@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+        <cn.cook.alex.chefgirl.ui.view.PageStaggeredGridView
+            android:id="@+id/grid_detail_step"
+            app:column_count="1"
+            app:item_margin="8dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            </cn.cook.alex.chefgirl.ui.view.PageStaggeredGridView>
+</LinearLayout>

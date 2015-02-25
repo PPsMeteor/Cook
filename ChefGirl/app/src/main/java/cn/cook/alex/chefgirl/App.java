@@ -9,11 +9,14 @@ import com.nostra13.universalimageloader.core.ImageLoader;
 import com.nostra13.universalimageloader.core.ImageLoaderConfiguration;
 import com.nostra13.universalimageloader.core.assist.QueueProcessingType;
 
+import cn.cook.alex.chefgirl.model.Menu;
+
 /**
  * Created by alex on 15/2/12.
  */
 public class App extends Application {
     private static Context sContext;
+    private static Menu sMenu;
 
     @Override
     public void onCreate() {
@@ -38,5 +41,13 @@ public class App extends Application {
 
     public static Context getContext() {
         return sContext;
+    }
+
+    public static Menu getsMenu() {
+        return sMenu;
+    }
+
+    public static void setsMenu(Menu menu) {
+        sMenu = menu;
     }
 }

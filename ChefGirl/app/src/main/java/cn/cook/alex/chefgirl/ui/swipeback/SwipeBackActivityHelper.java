@@ -3,6 +3,7 @@ package cn.cook.alex.chefgirl.ui.swipeback;
 
 import android.app.Activity;
 import android.app.ActivityOptions;
+import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Build;
 import android.view.LayoutInflater;

@@ -26,7 +26,12 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ui.Activity.SearchActivity" ></activity>
+        <activity android:name=".ui.Activity.SearchActivity"
+            android:theme="@style/TranslucentTheme">
+            </activity>
+        <activity android:name=".ui.Activity.MenuDetailActivity"
+            android:theme="@style/TranslucentTheme">
+            </activity>
     </application>
 
 </manifest>

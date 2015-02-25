@@ -9,6 +9,7 @@ import java.util.HashMap;
 import java.util.List;
 
 import cn.cook.alex.chefgirl.dao.MenusDataHelper;
+import cn.cook.alex.chefgirl.utils.LogUtil;
 
 /**
  * Created by alex on 15/2/12.
@@ -27,9 +28,9 @@ public class Menu extends BaseModel {
      */
     public String[] albums;
 
-    private List<Step> steps;
+    public List<Step> steps;
 
-    private class Step{
+    public class Step{
         public String step;
         public String img;
     }
@@ -59,6 +60,7 @@ public class Menu extends BaseModel {
         }
         menu = new Gson().fromJson(c.getString(c.getColumnIndex(MenusDataHelper.MenusDBInfo.JSON))
         ,Menu.class);
+        LogUtil.d(Menu.class,"fromCursor:");
         addToCache(menu);
         return menu;
     }
@@ -88,13 +90,27 @@ public class Menu extends BaseModel {
             }
             return result.data;
         }
+
+        public String getMaxItem(){
+            if (result == null){
+                return "0";
+            }
+            return result.pn;
+        }
+
+        public String getTotalNum(){
+            if (result == null){
+                return "0";
+            }
+            return result.totalNum;
+        }
     }
 
     private class Result{
         public ArrayList<Menu> data;
         public String totalNum;
-        public String pn;
-        public String rn;
+        public String pn;//数据起始返回下标
+        public String rn;//返回的条目数
 
         @Override
         public String toString() {
